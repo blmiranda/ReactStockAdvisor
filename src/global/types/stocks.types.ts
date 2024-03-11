@@ -1,7 +1,7 @@
 interface StockObject {
   symbol: string;
   date: string;
-  price: number;
+  price: string;
   socialMediaCount: number;
 }
 
