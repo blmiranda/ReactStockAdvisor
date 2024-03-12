@@ -13,7 +13,12 @@ async function fetchStocks(symbol: string, days: number): Promise<Stocks> {
         symbol: 'example',
         date: 'example',
         price: '1.00',
-        socialMediaCount: 1,
+        socialMediaCount: {
+          facebook: 1,
+          instagram: 1,
+          twitter: 1,
+          tiktok: 1,
+        },
       },
     ];
 
