@@ -3,24 +3,26 @@ import { Stocks } from '../../global/types/stocks.types';
 import generateMockData from '../../utils/generateMockData';
 import fetchStocks from '../../api/fetchStocks';
 
-const useMockData: boolean = true;
-
-async function fetchData(symbol: string, days: number): Promise<Stocks> {
-  if (useMockData) {
+async function fetchData(
+  symbol: string,
+  days: number,
+  config: { useMockData: boolean }
+): Promise<Stocks> {
+  if (config.useMockData) {
     try {
       const data: Stocks = await generateMockData(symbol, days);
       return data;
-    } catch (error) {
-      // handle error here
-      throw error;
+    } catch (error: unknown) {
+      if (error instanceof Error) throw new Error(error.message);
+      throw new Error('An unknown error ocurred');
     }
   } else {
     try {
       const data: Stocks = await fetchStocks(symbol, days);
       return data;
-    } catch (error) {
-      // handle error here
-      throw error;
+    } catch (error: unknown) {
+      if (error instanceof Error) throw new Error(error.message);
+      throw new Error('An unknown error ocurred');
     }
   }
 }
