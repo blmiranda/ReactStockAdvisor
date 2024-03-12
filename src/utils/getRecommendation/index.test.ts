@@ -1,7 +1,7 @@
 import { Stocks } from '../../global/types/stocks.types';
 
 import getRecommendation from './';
-import * as recommendationStrategies from '../../recommendationStrategies/';
+import * as recommendationStrategies from '../../recommendationStrategies';
 
 jest.mock('../../recommendationStrategies');
 
