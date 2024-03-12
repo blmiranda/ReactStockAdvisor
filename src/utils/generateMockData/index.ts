@@ -19,9 +19,13 @@ async function generateMockData(symbol: string, days: number): Promise<Stocks> {
     });
   }
 
-  return new Promise((resolve) => {
+  return new Promise((resolve, reject) => {
     setTimeout(() => {
-      resolve(data.reverse());
+      if (data) {
+        resolve(data.reverse());
+      } else {
+        reject(new Error('Error generating mock data'));
+      }
     }, 1000);
   });
 }
