@@ -6,6 +6,7 @@ function handleAxiosError(error: AxiosError): Error {
     console.error(error.response.status);
     console.error(error.response.headers);
 
+    // return custom error message for each status code if needed here
     return new Error('Response error');
   }
 
