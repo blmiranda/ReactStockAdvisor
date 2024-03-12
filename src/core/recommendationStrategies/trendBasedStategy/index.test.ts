@@ -1,4 +1,6 @@
-import { Stocks } from '../../global/types/stocks.types';
+import { Stocks } from '../../../global/types/stocks.types';
+import { TrendBasedConfig } from '../../../global/types/strategiesConfigs.types';
+
 import trendBasedStrategy from './';
 
 describe('trendBasedStrategy', () => {
@@ -8,17 +10,31 @@ describe('trendBasedStrategy', () => {
         symbol: 'AAPL',
         date: '2024-03-10',
         price: '100.00',
-        socialMediaCount: 100,
+        socialMediaCount: {
+          facebook: 25,
+          instagram: 25,
+          twitter: 25,
+          tiktok: 25,
+        },
       },
       {
         symbol: 'MSFT',
         date: '2024-03-11',
         price: '110.00',
-        socialMediaCount: 130,
+        socialMediaCount: {
+          facebook: 25,
+          instagram: 25,
+          twitter: 50,
+          tiktok: 30,
+        },
       },
     ];
 
-    expect(trendBasedStrategy(stocks)).toBe('Buy');
+    const config: TrendBasedConfig = {
+      socialMediaServices: ['facebook', 'instagram', 'twitter', 'tiktok'],
+    };
+
+    expect(trendBasedStrategy(stocks, config)).toBe('Buy');
   });
 
   it('should recommend Sell when price and social media trends are below thresholds', () => {
@@ -27,17 +43,31 @@ describe('trendBasedStrategy', () => {
         symbol: 'AAPL',
         date: '2024-03-10',
         price: '100.00',
-        socialMediaCount: 100,
+        socialMediaCount: {
+          facebook: 25,
+          instagram: 25,
+          twitter: 25,
+          tiktok: 25,
+        },
       },
       {
         symbol: 'MSFT',
         date: '2024-03-11',
         price: '90.00',
-        socialMediaCount: 70,
+        socialMediaCount: {
+          facebook: 20,
+          instagram: 20,
+          twitter: 20,
+          tiktok: 10,
+        },
       },
     ];
 
-    expect(trendBasedStrategy(stocks)).toBe('Sell');
+    const config: TrendBasedConfig = {
+      socialMediaServices: ['facebook', 'instagram', 'twitter', 'tiktok'],
+    };
+
+    expect(trendBasedStrategy(stocks, config)).toBe('Sell');
   });
 
   it('should recommend Hold when trends do not meet Buy or Sell criteria', () => {
@@ -46,16 +76,30 @@ describe('trendBasedStrategy', () => {
         symbol: 'AAPL',
         date: '2024-03-10',
         price: '100.00',
-        socialMediaCount: 100,
+        socialMediaCount: {
+          facebook: 25,
+          instagram: 25,
+          twitter: 25,
+          tiktok: 25,
+        },
       },
       {
         symbol: 'MSFT',
         date: '2024-03-11',
         price: '102.00',
-        socialMediaCount: 110,
+        socialMediaCount: {
+          facebook: 25,
+          instagram: 25,
+          twitter: 25,
+          tiktok: 35,
+        },
       },
     ];
 
-    expect(trendBasedStrategy(stocks)).toBe('Hold');
+    const config: TrendBasedConfig = {
+      socialMediaServices: ['facebook', 'instagram', 'twitter', 'tiktok'],
+    };
+
+    expect(trendBasedStrategy(stocks, config)).toBe('Hold');
   });
 });
