@@ -15,7 +15,12 @@ describe('generateMockData', () => {
         symbol: expect.any(String),
         date: expect.any(String),
         price: expect.any(String),
-        socialMediaCount: expect.any(Number),
+        socialMediaCount: expect.objectContaining({
+          facebook: expect.any(Number),
+          instagram: expect.any(Number),
+          twitter: expect.any(Number),
+          tiktok: expect.any(Number),
+        }),
       })
     );
   });

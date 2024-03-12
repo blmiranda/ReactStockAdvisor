@@ -9,13 +9,21 @@ async function generateMockData(symbol: string, days: number): Promise<Stocks> {
 
     const date: string = today.toISOString().split('T')[0];
     const price: number = Math.random() * 100 + 50;
-    const socialMediaCount: number = Math.floor(Math.random() * 500 + 1);
+    const facebookMediaCount: number = Math.floor(Math.random() * 500 + 1);
+    const instagramMediaCount: number = Math.floor(Math.random() * 500 + 1);
+    const twitterMediaCount: number = Math.floor(Math.random() * 500 + 1);
+    const tiktokMediaCount: number = Math.floor(Math.random() * 500 + 1);
 
     data.push({
       symbol: symbol,
       date: date,
       price: price.toFixed(2),
-      socialMediaCount: socialMediaCount,
+      socialMediaCount: {
+        facebook: facebookMediaCount,
+        instagram: instagramMediaCount,
+        twitter: twitterMediaCount,
+        tiktok: tiktokMediaCount,
+      },
     });
   }
 

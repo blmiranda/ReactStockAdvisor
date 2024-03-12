@@ -16,12 +16,17 @@ const mockFetchStocks = fetchStocks as jest.Mock<
 
 describe('fetchData', () => {
   it('should fetch mock data when useMockData is true', async () => {
-    const mockData = [
+    const mockData: Stocks = [
       {
         symbol: 'AAPL',
         date: '2024-03-10',
         price: '100.00',
-        socialMediaCount: 100,
+        socialMediaCount: {
+          facebook: 1,
+          instagram: 1,
+          twitter: 1,
+          tiktok: 1,
+        },
       },
     ];
     mockGenerateMockData.mockResolvedValue(mockData);
@@ -33,12 +38,17 @@ describe('fetchData', () => {
   });
 
   it('should fetch real data when useMockData is false', async () => {
-    const realData = [
+    const realData: Stocks = [
       {
         symbol: 'AAPL',
         date: '2024-03-10',
         price: '100.00',
-        socialMediaCount: 100,
+        socialMediaCount: {
+          facebook: 1,
+          instagram: 1,
+          twitter: 1,
+          tiktok: 1,
+        },
       },
     ];
     mockFetchStocks.mockResolvedValue(realData);
