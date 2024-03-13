@@ -7,6 +7,7 @@ const AdvisorContext = createContext<AdvisorContextObject>({
   getStocks: async () => {},
   getAdvice: () => {},
   stocks: null,
+  setStocks: () => {},
   advice: null,
 });
 

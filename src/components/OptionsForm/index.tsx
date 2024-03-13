@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Animated, FlatList, View } from 'react-native';
+import { Animated, FlatList, Pressable, View, Text } from 'react-native';
 
 import styles from './styles';
 import { showSelectionOptions, hideSelectionOptions } from './animations';
@@ -26,7 +26,7 @@ const OptionsForm = ({
   selectionOptionsIsVisible,
   setSelectionOptionsIsVisible,
 }: Props): JSX.Element => {
-  const { getStocks } = useAdvisor();
+  const { getStocks, setStocks } = useAdvisor();
   const [symbolOptions, setSymbolOptions] = useState<StockOptions | null>(null);
   const [socialMediaOptions, setSocialMediaOptions] =
     useState<SocialMediaOptions | null>(null);
@@ -39,22 +39,22 @@ const OptionsForm = ({
   const [selectedTimeWindow, setSelectedTimeWindow] =
     useState<Array<TimeWindowOptionObject> | null>(null);
 
-  useEffect(() => {
-    async function getData() {
+  async function getData() {
+    if (
+      selectedSymbol?.length !== 0 &&
+      selectedSocialMedia?.length !== 0 &&
+      selectedTimeWindow?.length !== 0
+    ) {
       try {
         await getStocks(selectedSymbol![0].value, selectedTimeWindow![0].value);
       } catch (error: unknown) {
         if (error instanceof Error) throw new Error('An unknown error ocurred');
       }
-      console.log('symbol: ', selectedSymbol);
+    } else {
       console.log('socialMedia: ', selectedSocialMedia);
-      console.log('timeWindow: ', selectedTimeWindow);
+      setStocks(null);
     }
-
-    if (selectedSymbol && selectedSocialMedia && selectedTimeWindow) {
-      getData();
-    }
-  }, [selectedSymbol, selectedSocialMedia, selectedTimeWindow]);
+  }
 
   function handleOptionsDisplay(options: SelectionListOptionObject) {
     const displayDelay = selectionOptionsIsVisible ? 300 : 0;
@@ -146,6 +146,10 @@ const OptionsForm = ({
           selectedItem={selectedTimeWindow}
         />
       </View>
+
+      <Pressable style={styles.submitButton} onPress={getData}>
+        <Text style={styles.submitText}>Go</Text>
+      </Pressable>
 
       <View style={styles.divider} />
 

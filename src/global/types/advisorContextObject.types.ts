@@ -1,3 +1,4 @@
+import { Dispatch, SetStateAction } from 'react';
 import { Recommendation } from '../../core/recommendationStrategies/trendBasedStategy/types';
 import { StockTickerOptions } from './stockOptions.types';
 import { Stocks } from './stocks.types';
@@ -9,5 +10,6 @@ export interface AdvisorContextObject {
   getStocks: (symbol: StockTickerOptions, days: TimeWindow) => Promise<void>;
   getAdvice: (stocks: Stocks | null, config: TrendBasedConfig) => void;
   stocks: Stocks | null;
+  setStocks: Dispatch<SetStateAction<Stocks | null>>;
   advice: Recommendation | null;
 }

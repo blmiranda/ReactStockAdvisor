@@ -50,6 +50,7 @@ const AdvisorProvider = ({ children }: Props): JSX.Element => {
     getStocks: getStocks,
     getAdvice: getAdvice,
     stocks: stocks,
+    setStocks: setStocks,
     advice: advice,
   };
 

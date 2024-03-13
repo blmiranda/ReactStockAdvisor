@@ -32,4 +32,22 @@ export default StyleSheet.create({
     paddingHorizontal: 28,
     paddingVertical: 12,
   },
+
+  submitButton: {
+    alignSelf: 'center',
+
+    marginBottom: 16,
+    paddingVertical: 12,
+    paddingHorizontal: 24,
+    borderColor: theme.colors.base100,
+    borderWidth: 1,
+    borderRadius: 12,
+  },
+  submitButtonPressed: {
+    backgroundColor: theme.colors.base100,
+  },
+  submitText: {
+    color: theme.colors.base300,
+    fontWeight: 'bold',
+  },
 });
