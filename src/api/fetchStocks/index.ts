@@ -3,14 +3,19 @@ import { isAxiosError } from 'axios';
 import { Stocks } from '../../global/types/stocks.types';
 
 import handleAxiosError from '../../utils/handleAxiosError';
+import { StockTickerOptions } from '../../global/types/stockOptions.types';
 
-async function fetchStocks(symbol: string, days: number): Promise<Stocks> {
+async function fetchStocks(
+  symbol: StockTickerOptions,
+  days: number
+): Promise<Stocks> {
   try {
     // fetch the real data here
 
     const stocks: Stocks = [
       {
-        symbol: 'example',
+        symbol: 'AAPL',
+        icon: ['fab', 'apple'],
         date: 'example',
         price: '1.00',
         socialMediaCount: {

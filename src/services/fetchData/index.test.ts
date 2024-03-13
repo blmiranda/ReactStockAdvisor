@@ -19,6 +19,7 @@ describe('fetchData', () => {
     const mockData: Stocks = [
       {
         symbol: 'AAPL',
+        icon: ['fab', 'apple'],
         date: '2024-03-10',
         price: '100.00',
         socialMediaCount: {
@@ -41,6 +42,7 @@ describe('fetchData', () => {
     const realData: Stocks = [
       {
         symbol: 'AAPL',
+        icon: ['fab', 'apple'],
         date: '2024-03-10',
         price: '100.00',
         socialMediaCount: {
