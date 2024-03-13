@@ -8,7 +8,6 @@ describe('trendBasedStrategy', () => {
     const stocks: Stocks = [
       {
         symbol: 'AAPL',
-        icon: ['fab', 'apple'],
         date: '2024-03-10',
         price: '100.00',
         socialMediaCount: {
@@ -20,7 +19,6 @@ describe('trendBasedStrategy', () => {
       },
       {
         symbol: 'MSFT',
-        icon: ['fab', 'microsoft'],
         date: '2024-03-11',
         price: '110.00',
         socialMediaCount: {
@@ -43,7 +41,6 @@ describe('trendBasedStrategy', () => {
     const stocks: Stocks = [
       {
         symbol: 'AAPL',
-        icon: ['fab', 'apple'],
         date: '2024-03-10',
         price: '100.00',
         socialMediaCount: {
@@ -55,7 +52,6 @@ describe('trendBasedStrategy', () => {
       },
       {
         symbol: 'MSFT',
-        icon: ['fab', 'microsoft'],
         date: '2024-03-11',
         price: '90.00',
         socialMediaCount: {
@@ -78,7 +74,6 @@ describe('trendBasedStrategy', () => {
     const stocks: Stocks = [
       {
         symbol: 'AAPL',
-        icon: ['fab', 'apple'],
         date: '2024-03-10',
         price: '100.00',
         socialMediaCount: {
@@ -90,7 +85,6 @@ describe('trendBasedStrategy', () => {
       },
       {
         symbol: 'MSFT',
-        icon: ['fab', 'microsoft'],
         date: '2024-03-11',
         price: '102.00',
         socialMediaCount: {

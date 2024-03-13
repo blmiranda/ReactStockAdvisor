@@ -1,8 +1,5 @@
-import { IconProp } from '@fortawesome/fontawesome-svg-core';
-
 export interface StockObject {
   symbol: string;
-  icon: IconProp;
   date: string;
   price: string;
   socialMediaCount: {

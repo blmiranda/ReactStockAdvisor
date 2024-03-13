@@ -15,7 +15,6 @@ async function fetchStocks(
     const stocks: Stocks = [
       {
         symbol: 'AAPL',
-        icon: ['fab', 'apple'],
         date: 'example',
         price: '1.00',
         socialMediaCount: {

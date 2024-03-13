@@ -1,6 +1,4 @@
-import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import { Stocks } from '../../global/types/stocks.types';
-import stockIconsMap from '../stockIconsMap';
 import { StockTickerOptions } from '../../global/types/stockOptions.types';
 
 async function generateMockData(
@@ -13,7 +11,6 @@ async function generateMockData(
     const today: Date = new Date();
     today.setDate(today.getDate() - i);
 
-    const icon: IconProp = stockIconsMap[symbol];
     const date: string = today.toISOString().split('T')[0];
     const price: number = Math.random() * 100 + 50;
     const facebookMediaCount: number = Math.floor(Math.random() * 500 + 1);
@@ -23,7 +20,6 @@ async function generateMockData(
 
     data.push({
       symbol: symbol,
-      icon: icon,
       date: date,
       price: price.toFixed(2),
       socialMediaCount: {
