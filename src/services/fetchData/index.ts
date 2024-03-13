@@ -2,9 +2,10 @@ import { Stocks } from '../../global/types/stocks.types';
 
 import generateMockData from '../../utils/generateMockData';
 import fetchStocks from '../../api/fetchStocks';
+import { StockTickerOptions } from '../../global/types/stockOptions.types';
 
 async function fetchData(
-  symbol: string,
+  symbol: StockTickerOptions,
   days: number,
   config: { useMockData: boolean }
 ): Promise<Stocks> {

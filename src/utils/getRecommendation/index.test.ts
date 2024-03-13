@@ -11,6 +11,7 @@ describe('getRecommendation', () => {
     const mockStocks: Stocks = [
       {
         symbol: 'AAPL',
+        icon: ['fab', 'apple'],
         date: '2024-03-12',
         price: '100',
         socialMediaCount: {
