@@ -7,8 +7,7 @@ This document serves as the primary documentation for the Stock Market Recommend
 ## Video Demonstration
 To see the Stock Market Recommender App in action, watch our video demonstration below. This video provides a walkthrough of the app's features, showcasing its functionality and user interface.
 
-https://github.com/blmiranda/ReactStockAdvisor/assets/94651050/3d38dedc-0364-4026-905a-1403d8fc3c64
-
+https://github.com/blmiranda/ReactStockAdvisor/assets/94651050/6448ffa6-0fdd-451d-ab1c-f1c25e33dde2
 
 ## Assumptions
 
