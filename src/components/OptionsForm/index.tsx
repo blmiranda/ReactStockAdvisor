@@ -40,19 +40,25 @@ const OptionsForm = ({
     useState<Array<TimeWindowOptionObject> | null>(null);
 
   async function getData() {
-    if (
-      selectedSymbol?.length !== 0 &&
-      selectedSocialMedia?.length !== 0 &&
-      selectedTimeWindow?.length !== 0
-    ) {
-      try {
-        await getStocks(selectedSymbol![0].value, selectedTimeWindow![0].value);
-      } catch (error: unknown) {
-        if (error instanceof Error) throw new Error('An unknown error ocurred');
+    if (selectedSymbol && selectedSocialMedia && selectedTimeWindow) {
+      if (
+        selectedSymbol.length !== 0 &&
+        selectedSocialMedia.length !== 0 &&
+        selectedTimeWindow.length !== 0
+      ) {
+        try {
+          await getStocks(
+            selectedSymbol![0].value,
+            selectedTimeWindow![0].value
+          );
+        } catch (error: unknown) {
+          if (error instanceof Error)
+            throw new Error('An unknown error ocurred');
+        }
+      } else {
+        console.log('socialMedia: ', selectedSocialMedia);
+        setStocks(null);
       }
-    } else {
-      console.log('socialMedia: ', selectedSocialMedia);
-      setStocks(null);
     }
   }
 
@@ -147,7 +153,13 @@ const OptionsForm = ({
         />
       </View>
 
-      <Pressable style={styles.submitButton} onPress={getData}>
+      <Pressable
+        style={({ pressed }) => [
+          styles.submitButton,
+          pressed && styles.submitButtonPressed,
+        ]}
+        onPress={getData}
+      >
         <Text style={styles.submitText}>Go</Text>
       </Pressable>
 
