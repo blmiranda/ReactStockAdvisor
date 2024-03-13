@@ -1,79 +1,96 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# Stock Market Recommender App
 
-# Getting Started
+## Introduction
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+This document serves as the primary documentation for the Stock Market Recommender App developed for GoTo's technical interview process. The app is built using React Native and is designed to provide stock market recommendations based on stock prices and social media data.
 
-## Step 1: Start the Metro Server
+## Video Demonstration
+To see the Stock Market Recommender App in action, watch our video demonstration below. This video provides a walkthrough of the app's features, showcasing its functionality and user interface.
 
-First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
+https://github.com/blmiranda/ReactStockAdvisor/assets/94651050/3d38dedc-0364-4026-905a-1403d8fc3c64
 
-To start Metro, run the following command from the _root_ of your React Native project:
 
-```bash
-# using npm
-npm start
+## Assumptions
 
-# OR using Yarn
-yarn start
-```
+During the development of this app, the following assumptions were made:
 
-## Step 2: Start your Application
+- **HTTP Requests**: The app uses `axios` for making HTTP requests to external APIs.
+- **Stock Symbol Choices**: The app offers a limited set of choices concerning stock symbols.
+- **Social Media Platforms**: The app considers data from Facebook, Instagram, Twitter, and TikTok.
+- **Time Window**: The app allows users to select time windows of the last 10 days, 15 days, 30 days, and 60 days.
 
-Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
+## Features
 
-### For Android
+### Base Features
 
-```bash
-# using npm
-npm run android
+- [x] React Native based application.
+- [x] Mock data generation using `Math.random`.
+- [x] Recommendation algorithm using stock price and social media counts.
+- [x] Maintainability and scalability considered.
+- [x] Quality assurance through tests for the recommendation algorithm.
+- [x] User-friendly UI for input and data presentation.
+- [x] Separate sections for user input, data display, and recommendations.
+- [ ] **Not Implemented**: Display of social media post counts.
 
-# OR using Yarn
-yarn android
-```
+### Optional Features
 
-### For iOS
+- [ ] **Not Implemented**: Testing of additional components beyond the recommendation algorithm.
+- [x] Dynamic addition/removal of social media services.
+- [x] Flexible architecture for switching recommendation algorithms.
+- [ ] **Not Implemented**: Accessibility features for visually impaired users.
+- [ ] **Not Implemented**: Graphical representation of recommendation points.
+- [x] Extensible design for incorporating additional parameters in algorithms.
 
-```bash
-# using npm
-npm run ios
+## Development Notes
 
-# OR using Yarn
-yarn ios
-```
+- **State Management**: Implemented using [Context API].
+- **Navigation**: Managed with React Navigation.
+- **Error Handling**: Robust error handling for network requests and user interactions.
 
-If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
+# Installation and Setup
 
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
+To get started with the Stock Market Recommender App, follow these simple steps:
 
-## Step 3: Modifying your App
+1. **Clone the Repository**
 
-Now that you have successfully run the app, let's modify it.
+   - First, clone the repository to your local machine using the following command:
+     ```bash
+     git clone https://github.com/blmiranda/ReactStockAdvisor
+     ```
 
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
+2. **Install Dependencies**
 
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
+   - Navigate to the project directory and run the following command to install all necessary dependencies:
+     ```bash
+     npm install
+     ```
+     ```
+     npx pod-install ios
+     ```
 
-## Congratulations! :tada:
+3. **Starting the App**
 
-You've successfully run and modified your React Native App. :partying_face:
+   - To start the app, run:
+     ```bash
+     npm start
+     ```
+   - This command will start the Metro bundler, which is required for running React Native applications.
 
-### Now what?
+4. **Running on iOS or Android Simulator**
 
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
+   - **For iOS**:
 
-# Troubleshooting
+     - Ensure you have Xcode installed and set up on your macOS.
+     - Run the following command to build the app for iOS:
+       ```bash
+       npm run ios
+       ```
+     - This will open the iOS Simulator and launch the app.
 
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+   - **For Android**:
+     - Ensure you have Android Studio installed and an Android emulator set up.
+     - Run the following command to build the app for Android:
+       ```bash
+       npm run android
+       ```
+     - This will open the Android emulator and launch the app.
