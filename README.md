@@ -4,6 +4,12 @@
 
 This document serves as the primary documentation for the Stock Market Recommender App developed for GoTo's technical interview process. The app is built using React Native and is designed to provide stock market recommendations based on stock prices and social media data.
 
+## Video Demonstration
+To see the Stock Market Recommender App in action, watch our video demonstration below. This video provides a walkthrough of the app's features, showcasing its functionality and user interface.
+
+https://github.com/blmiranda/ReactStockAdvisor/assets/94651050/3d38dedc-0364-4026-905a-1403d8fc3c64
+
+
 ## Assumptions
 
 During the development of this app, the following assumptions were made:
@@ -28,7 +34,7 @@ During the development of this app, the following assumptions were made:
 
 ### Optional Features
 
-- [] **Not Implemented**: Testing of additional components beyond the recommendation algorithm.
+- [ ] **Not Implemented**: Testing of additional components beyond the recommendation algorithm.
 - [x] Dynamic addition/removal of social media services.
 - [x] Flexible architecture for switching recommendation algorithms.
 - [ ] **Not Implemented**: Accessibility features for visually impaired users.
