@@ -31,6 +31,9 @@ export default StyleSheet.create({
     borderWidth: 1,
     borderRadius: 15,
   },
+  buttonPressed: {
+    backgroundColor: theme.colors.base100,
+  },
 
   text: {
     color: theme.colors.base300,

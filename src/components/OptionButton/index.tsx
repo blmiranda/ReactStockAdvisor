@@ -119,7 +119,13 @@ const OptionButton = ({
         <Text style={styles.label}>{buttonConfig.name}</Text>
       </View>
 
-      <Pressable style={styles.button} onPress={handleOptions}>
+      <Pressable
+        style={({ pressed }) => [
+          styles.button,
+          pressed && styles.buttonPressed,
+        ]}
+        onPress={handleOptions}
+      >
         {selectedItem ? (
           renderSelectedItem()
         ) : (
