@@ -2,12 +2,12 @@ import { IconsMap } from './types';
 
 const stockIconsMap: IconsMap = {
   AAPL: ['fab', 'apple'],
-  MSFT: ['fab', 'apple'],
-  GOOGL: ['fab', 'apple'],
-  META: ['fab', 'apple'],
-  ABNB: ['fab', 'apple'],
-  AMZN: ['fab', 'apple'],
-  UBER: ['fab', 'apple'],
+  MSFT: ['fab', 'microsoft'],
+  GOOGL: ['fab', 'google'],
+  META: ['fab', 'meta'],
+  ABNB: ['fab', 'airbnb'],
+  AMZN: ['fab', 'amazon'],
+  UBER: ['fab', 'uber'],
 };
 
 export default stockIconsMap;
